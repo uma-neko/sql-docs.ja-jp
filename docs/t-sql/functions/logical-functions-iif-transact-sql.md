@@ -53,7 +53,7 @@ IIF ( boolean_expression, true_value, false_value )
  *boolean_expression* が false に評価された場合に返す値。  
   
 ## <a name="return-types"></a>戻り値の型  
- 内の型からの優先順位が最も高いデータ型を返します *true_value* と *false_value* です。 詳細については、「[データ型の優先順位 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-type-precedence-transact-sql.md)」を参照してください。  
+ *true_value* および *false_value* の型から最も優先順位の高い型を返します。 詳細については、「[データ型の優先順位 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-type-precedence-transact-sql.md)」を参照してください。
   
 ## <a name="remarks"></a>解説  
  IIF は CASE 式の簡略版です。 最初の引数として渡されたブール式を評価し、評価の結果に基づいて他の 2 つの引数のいずれかを返します。 つまり、 *true_value* ブール式が true の場合、返されると、 *false_value* ブール式が false または不明のかどうかに返されます。 任意の型の *true_value* と *false_value* を指定できます。 ブール式、NULL 処理、および戻り値の型に対する CASE 式に適用されるのと同じ規則が IIF にも適用されます。 詳細については、を参照してください。 [CASE &#40;Transact-SQL&#41;](../../t-sql/language-elements/case-transact-sql.md).  
