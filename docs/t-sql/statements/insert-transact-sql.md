@@ -752,7 +752,7 @@ VALUES (N'Public Relations', N'Executive General and Administration');
 GO  
 ```  
   
-#### <a name="n-inserting-data-into-a-remote-table-by-using-the-openquery-function"></a>北 OPENQUERY 関数を使用してリモート テーブルにデータを挿入する  
+#### <a name="n-inserting-data-into-a-remote-table-by-using-the-openquery-function"></a>N. OPENQUERY 関数を使用してリモート テーブルにデータを挿入する  
  次の例では、[OPENQUERY](../../t-sql/functions/openquery-transact-sql.md) 行セット関数を指定してリモート テーブルに行を挿入します。 この例では、前の例で作成したリンク サーバー名を使用します。  
   
 **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
@@ -978,7 +978,7 @@ GO
 SELECT DeletedProductID, RemovedOnDate FROM Production.ZeroInventory;  
 ```  
 
-#### <a name="w-inserting-data-using-the-select-option"></a>西 SELECT オプションを使用してデータを挿入する  
+#### <a name="w-inserting-data-using-the-select-option"></a>W. SELECT オプションを使用してデータを挿入する  
  次の例では、INSERT ステートメントと SELECT オプションを使って複数のデータ行を挿入する方法を示します。 1 番目の `INSERT` ステートメントでは、`SELECT` ステートメントを使用して、コピー元のテーブルからデータを直接取得し、結果セットを `EmployeeTitles` テーブルに格納します。  
   
 ```sql
