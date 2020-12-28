@@ -482,7 +482,7 @@ OPTION ( LABEL = N'label1' );
   
 ```  
   
-### <a name="n-using-a-label-and-a-query-hint-with-the-delete-statement"></a>北 DELETE ステートメントでラベルとクエリ ヒントを使用する
+### <a name="n-using-a-label-and-a-query-hint-with-the-delete-statement"></a>N. DELETE ステートメントでラベルとクエリ ヒントを使用する
 
  このクエリでは、DELETE ステートメントでクエリ結合ヒントを使用する場合の基本構文を示します。 結合ヒントと OPTION 句の使用方法の詳細については、「[OPTION 句 (Transact-SQL)](../queries/option-clause-transact-sql.md)」を参照してください。
   
