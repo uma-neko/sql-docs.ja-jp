@@ -5,16 +5,16 @@ description: Azure Arc 対応 SQL Server を使用して SQL Server のインス
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 10/07/2020
+ms.date: 12/08/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: references_regions
-ms.openlocfilehash: 59a3dab4136749f85e1f752ee823f8815080fd76
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: c1ba7f7552b5050e3c1fa7bc765acfa431f3df30
+ms.sourcegitcommit: 18e2f0706e03d0b2b6324845244fbafaa077a8dd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987988"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103147"
 ---
 # <a name="azure-arc-enabled-sql-server-preview"></a>Azure Arc 対応 SQL Server (プレビュー)
 
@@ -43,8 +43,9 @@ Azure Arc 対応 SQL Server は、Windows または Linux オペレーティン�
 
 ### <a name="required-permissions"></a>必要なアクセス許可
 
-SQL Server インスタンスとホスティングを Azure Arc に接続するには、次の操作を実行する特権のあるアカウントが必要です。
-   * Microsoft.AzureData/*
+SQL Server インスタンスとホスト マシンを Azure Arc に接続するには、次の操作を実行する特権のあるアカウントが必要です。
+   * Microsoft.AzureArcData/sqlServerInstances/read
+   * Microsoft.AzureArcData/sqlServerInstances/write
    * Microsoft.HybridCompute/machines/read
    * Microsoft.HybridCompute/machines/write
    * Microsoft.GuestConfiguration/guestConfigurationAssignments/read
@@ -58,6 +59,10 @@ Azure Arc で SQL サーバー インスタンスとマシンを構成する前�
 ### <a name="networking-configuration-and-resource-providers"></a>ネットワーク構成とリソース プロバイダー
 
 Connected Machine エージェントに必要な[ネットワーク構成、トランスポート層セキュリティ、およびリソース プロバイダー](/azure/azure-arc/servers/agent-overview#prerequisites)を確認します。
+
+SQL Server インスタンスを Azure Arc に接続するには、リソース プロバイダー `Microsoft.AzureArcData` が必要です。リソース プロバイダーの登録手順については、「[前提条件](connect.md#prerequisites)」セクションを参照してください。
+
+SQL Server インスタンスが既に Azure Arc に接続されている場合は、次の手順に従って、既存の **SQL Server - Azure Arc** リソースを新しい名前空間に移行します。
 
 ### <a name="supported-azure-regions"></a>サポート対象の Azure リージョン
 

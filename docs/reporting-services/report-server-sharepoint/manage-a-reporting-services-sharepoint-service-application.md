@@ -8,13 +8,13 @@ ms.technology: report-server-sharepoint
 ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 5de7b0a5b155c519a7a7d24331fb9ad2dc571e3e
-ms.sourcegitcommit: 66a0672e47415dbd5cfd8d19075102c8c3973e70
+monikerRange: '>=sql-server-2016 <=sql-server-2016'
+ms.openlocfilehash: cbc258c5da9252a4463caf4b9b096c5a899d9e0a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83765083"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97409689"
 ---
 # <a name="manage-a-reporting-services-sharepoint-service-application"></a>Reporting Services SharePoint サービス アプリケーションの管理
 
@@ -93,7 +93,7 @@ ms.locfileid: "83765083"
 |設定|説明|  
 |-------------|--------------|  
 |レポート ビルダーのダウンロードを有効にする|既定値は TRUE です。<br /><br /> レポート ビルダー アプリケーションのダウンロード ボタンをクライアントに表示するかどうかを指定します。|  
-|レポート ビルダーの起動 URL|レポート サーバーで既定のレポート ビルダー URL を使用しない場合に、カスタムの URL を指定します。 この設定はオプションです。 この値を指定しなかった場合は、レポート ビルダーを起動する既定の URL が使用されます。 レポート ビルダー 3.0 を ClickOnce アプリケーションとして起動するには、「 https://\<コンピューター名>/ReportServer/ReportBuilder/ReportBuilder_3_0_0_0.application」と入力します。|  
+|レポート ビルダーの起動 URL|レポート サーバーで既定のレポート ビルダー URL を使用しない場合に、カスタムの URL を指定します。 この設定はオプションです。 この値を指定しなかった場合は、レポート ビルダーを起動する既定の URL が使用されます。 レポート ビルダー 3.0 を ClickOnce アプリケーションとして起動するには、「 https://\<computername>/ReportServer/ReportBuilder/ReportBuilder_3_0_0_0.application」と入力します。|  
 |クライアントの印刷を有効にする|既定値は TRUE です。<br /><br /> ユーザーがクライアント側のコントロール (印刷オプションを提供します) をダウンロードできるかどうかを指定します。|  
 |セッション タイムアウトの編集|既定値は 7200 秒です。|  
 |セッション キャッシュ制限の編集|既定値は 5 です。|  
@@ -147,7 +147,7 @@ Get-SPRSServiceApplication | select typename, name, service, ueaccountname
  アカウントを指定します。  
   
  **アカウント**  
- Windows のドメイン ユーザー アカウントを入力します。 *\<ドメイン>\\<ユーザー アカウント\>* の形式を使用します。  
+ Windows のドメイン ユーザー アカウントを入力します。 *\<domain>\\<ユーザー アカウント\>* の形式を使用します。  
   
  **パスワード**  
  パスワードを入力します。  
