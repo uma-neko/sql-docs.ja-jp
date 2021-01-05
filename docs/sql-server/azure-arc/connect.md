@@ -8,12 +8,12 @@ ms.reviewer: mikeray
 ms.date: 09/10/2020
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: e80892bfef7ee2c8cf22aef1b491ab5ea0c0addd
-ms.sourcegitcommit: 442fbe1655d629ecef273b02fae1beb2455a762e
+ms.openlocfilehash: 5f0401081e6d437bcc0290c111bb5325e476650e
+ms.sourcegitcommit: 18e2f0706e03d0b2b6324845244fbafaa077a8dd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235566"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103193"
 ---
 # <a name="connect-your-sql-server-to-azure-arc"></a>SQL Server を Azure Arc に接続する
 
@@ -22,22 +22,23 @@ ms.locfileid: "93235566"
 ## <a name="prerequisites"></a>前提条件
 
 * マシンに SQL Server の 1 つ以上のインスタンスがインストールされていること
-* Windows マシンの場合は、Azure PowerShell をインストール済みであること。 指示に従って、[Azure PowerShell をインストール](/powershell/azure/install-az-ps)してください。
-* Linux マシンの場合は、Azure CLI をダウンロードしており、Azure アカウントを接続済みであること。 指示に従って、[Azure CLI をインストール](/cli/azure/install-azure-cli-apt)してください。
-* **Microsoft.AzureData** リソース プロバイダーが登録されました。 リソース プロバイダーの詳細については、「Azure リソース プロバイダーと種類」を参照してください。
-    * PowerShell では、`Register-AzResourceProvider -ProviderNamespace Microsoft.AzureData` を実行します
-    * Linux では、`az provider register --namespace 'Microsoft.AzureData` を実行します
-
-
+* 次のいずれかの方法を使用して、**Microsoft.AzureArcData** リソース プロバイダーが登録されていること  
+    * Azure portal の使用:
+        - **[サブスクリプション]** を選択します 
+        - サブスクリプションの選択
+        - **[設定]** で、 **[リソース プロバイダー]** を選択します
+        - `Microsoft.AzureArcData` を検索し、 **[登録]** を選択します
+    * PowerShell を使用して、`Register-AzResourceProvider -ProviderNamespace Microsoft.AzureArcData` を実行します。
+    * CLI を使用して、`az provider register --namespace 'Microsoft.AzureArcData` を実行します。
 
 ## <a name="generate-a-registration-script-for-sql-server"></a>SQL Server の登録スクリプトを生成する
 
-この手順では、マシンにインストールされているすべての SQL Server インスタンスを検出し、 __SQL Server - Azure Arc__ リソースとして登録するスクリプトを生成します。 ホストしている物理または仮想マシンが Azure Arc に登録されていない場合、スクリプトによって自動的に行われます。
+この手順では、マシンにインストールされているすべての SQL Server インスタンスを検出し、__SQL Server - Azure Arc__ リソースとして登録するスクリプトを生成します。 ホストしている物理または仮想マシンが Azure Arc に登録されていない場合、スクリプトによって自動的に行われます。
 
 1. __SQL Server - Azure Arc__ リソースの種類を検索し、作成ブレードを使用して新しいものを追加します。
 
 ![作成を開始する](media/join/start-creation-of-sql-server-azure-arc-resource.png)
-    
+
 2. 前提条件を確認し、 **[サーバーの詳細]** タブに移動します。  
 
 3. サブスクリプション、リソース グループ、Azure リージョン、およびホスト オペレーティング システムを選択します。 必要に応じて、ネットワークでインターネットへの接続に使用するプロキシも指定します。
@@ -53,7 +54,7 @@ ms.locfileid: "93235566"
 
 ## <a name="connect-the-installed-sql-server-instances-to-azure-arc"></a>インストールされている SQL Server インスタンスを Azure Arc に接続する
 
-この手順では、Azure portal からダウンロードしたスクリプトを使用し、ターゲットの物理または仮想マシンで実行します。 その結果、マシンにインストールされている各 SQL Server インスタンスが、 __SQL Server - Azure Arc__ リソースとして登録されます。 さらに、マシン自体にゲスト構成エージェントがインストールされていない場合は、自動的にインストールされ、 __マシン - Azure Arc__ リソースとして登録されます。
+この手順では、Azure portal からダウンロードしたスクリプトを使用し、ターゲットの物理または仮想マシンで実行します。 その結果、マシンにインストールされている各 SQL Server インスタンスが、__SQL Server - Azure Arc__ リソースとして登録されます。 さらに、マシン自体にゲスト構成エージェントがインストールされていない場合は、自動的にインストールされ、__マシン - Azure Arc__ リソースとして登録されます。
 
 > [!NOTE]
 > 必ず、「[前提条件](overview.md#prerequisites)」で説明されている最小限のアクセス許可要件を満たすアカウントを使用して、スクリプトを実行してください。
@@ -92,11 +93,11 @@ ms.locfileid: "93235566"
 
 ![接続されている SQL Server を確認する ](media/join/validate-sql-server-azure-arc.png)
 
-## <a name="un-register-the-sql-server---azure-arc-resources"></a>SQL Server - Azure Arc リソースの登録を解除する
+## <a name="disconnect-your-sql-server-instance"></a>SQL Server インスタンスを切断する
 
-既存の __SQL Server - Azure Arc__ リソースを削除するには、それが含まれているリソース グループに移動し、グループ内のリソースの一覧から削除します。
+SQL Server インスタンスを Azure Arc から切断するには、Azure portal に移動し、そのインスタンスの __SQL Server - Azure Arc__ リソースを開き、 **[登録解除]** ボタンをクリックします。
 
-![SQL Server の登録を解除する](media/join/delete-sql-server-azure-arc.png)
+![SQL Server の登録を解除する](media/join/unregister-sql-server-azure-arc.png)
 
 ## <a name="next-steps"></a>次のステップ
 
