@@ -1,7 +1,7 @@
 ---
 title: データの取得と変更
-description: .NET Framework の Microsoft SqlClient Data Provider for SQL Server は、データを読み取って更新するための、アプリケーションとデータ ソース間のブリッジとして機能します。
-ms.date: 11/13/2020
+description: .NET では、Microsoft SqlClient Data Provider for SQL Server は、データを読み取って更新するための、アプリケーションとデータ ソース間のブリッジとして機能します。
+ms.date: 11/30/2020
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
 ms.prod: sql
 ms.prod_service: connectivity
@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-chmalh
-ms.openlocfilehash: d6e4d6c298c632c446e1671b5d9adabaa19e0776
-ms.sourcegitcommit: c127c0752e84cccd38a7e23ac74c0362a40f952e
+ms.openlocfilehash: c3cf3766ffc6c8acf6025b58aa0adbaafafa2188
+ms.sourcegitcommit: 2add15a99df7b85d271adb261523689984dfd134
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96761490"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97038960"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>ADO.NET でのデータの取得と変更
 
@@ -41,6 +41,10 @@ Microsoft SqlClient Data Provider for SQL Server の接続プールについて�
 
 [DataAdapter と DataReader](dataadapters-datareaders.md)  
 DataReaders、DataAdapters、パラメーター、DataAdapter イベントの処理、およびバッチ操作の実行について説明します。
+
+[トランザクションとコンカレンシー](transactions-and-concurrency.md) ローカル トランザクションの実行方法、分散トランザクション、オプティミスティック同時実行制御の使用について説明するトピックが含まれています。
+
+[データベース スキーマ情報の取得](retrieving-database-schema-information.md) 使用可能なデータベースまたはカタログ、データベース内のテーブルとビュー、テーブルに存在する制約、およびその他のスキーマ情報をデータ ソースから取得する方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 

@@ -10,24 +10,24 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-kaywon
-ms.openlocfilehash: ea2f8a65cb8ca16efd625309f73d7dccc3e27505
-ms.sourcegitcommit: fe5c45a492e19a320a1a36b037704bf132dffd51
+ms.openlocfilehash: e70f6da7755b28c400cc80a5ee6de79a004e4e42
+ms.sourcegitcommit: 2add15a99df7b85d271adb261523689984dfd134
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80911668"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97038920"
 ---
 # <a name="sql-server-security"></a>SQL Server のセキュリティ
 
 [!INCLUDE[Driver_ADONET_Download](../../../includes/driver_adonet_download.md)]
 
-SQL Server には、安全なデータベース アプリケーションの作成を支援するさまざまな機能が備わっています。  
+SQL Server は、安全なデータベース アプリケーションの作成を支援するさまざまな機能を備えています。  
   
 データの盗難や破壊など、セキュリティに関する基本的な考慮事項は、使用している SQL Server のバージョンに関係なく当てはまります。 データの整合性も、セキュリティの問題と見なす必要があります。 データが保護されていない場合、アドホック データ操作が許可されていて、そのデータが誤って、または悪意を持って正しくない値に変更されたり、完全に削除されたりすると、そのデータは使い物にならなくなる可能性があります。 また、機密情報を適切に保存するなど、遵守しなければならない法的要件が存在することもよくあります。 特定の管轄区域に適用される法律によっては、特定の種類の個人データを保存することが完全に禁止されています。  
   
 SQL Server の各バージョンにはそれぞれ異なるセキュリティ機能があり、Windows と同様、新しいバージョンほど機能が強化されています。 セキュリティ機能だけでは、データベース アプリケーションの安全性が保証されないことを理解しておくことが重要です。 データベース アプリケーションの要件、実行環境、デプロイ モデル、物理的な場所、およびユーザー数は、それぞれ独特です。 スコープ内のローカル アプリケーションの中には最小限のセキュリティしか必要としないものもありますが、その他のローカル アプリケーションや、インターネット上で展開されたアプリケーションについては、厳しいセキュリティ対策と継続的な監視と評価が必要な場合もあります。  
   
-SQL Server データベース アプリケーションのセキュリティ要件は、事後的対策としてではなく設計時に考慮することが大切です。 開発サイクルの早い段階で脅威を評価すれば、脆弱性が検出されたときの損害の可能性を軽減することができます。  
+SQL Server データベース アプリケーションのセキュリティ要件は、事後的対策としてではなくデザイン時に考慮することが大切です。 開発サイクルの早い段階で脅威を評価すれば、脆弱性が検出されたときの損害の可能性を軽減することができます。  
   
 アプリケーションの初期設計が適切であっても、システムの進化に伴って新しい脅威が発生する可能性があります。 データベースに対して複数の防御線を張ることで、セキュリティ侵害による被害を最小限に抑えることができます。 まずは必要以上の権限を決して付与しないことです。これにより攻撃対象の領域が少なくなります。  
   
@@ -35,7 +35,10 @@ SQL Server データベース アプリケーションのセキュリティ要�
   
 ## <a name="in-this-section"></a>このセクションの内容  
 [SQL Server での認証](authentication-sql-server.md)  
-SQL Server でのログインと認証について説明し、その他のリソースへのリンクを提供します。 
+SQL Server のログインと認証の説明のほか、各種リソースへのリンクが記載されています。 
+
+[Azure Active Directory 認証](azure-active-directory-authentication.md)  
+サポートされている Azure Active Directory 認証モードを使用して、SqlClient で Azure SQL データ ソースに接続する方法について説明します。
   
 [SQL Server におけるアプリケーション セキュリティのシナリオ](application-security-scenarios-sql-server.md)  
 ADO.NET および SQL Server アプリケーションに該当するさまざまなセキュリティ シナリオを取り上げます。  

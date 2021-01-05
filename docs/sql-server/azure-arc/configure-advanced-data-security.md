@@ -8,12 +8,12 @@ ms.reviewer: mikeray
 ms.date: 09/10/2020
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: 2bd589ebacd9ea35e15881eaaeb022d4f2302986
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: e0c68752d21de5945c06433af8c08f6208322f7c
+ms.sourcegitcommit: 18e2f0706e03d0b2b6324845244fbafaa077a8dd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988028"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97103173"
 ---
 # <a name="configure-advanced-data-security-for-azure-arc-enabled-sql-server-instance"></a>Azure Arc が有効な SQL Server インスタンスの高度なデータ セキュリティを構成する
 
@@ -42,7 +42,7 @@ ms.locfileid: "91988028"
 
 次の手順は、リモート マシンで MMA エージェントをまだ構成していない場合にのみ必要です。
 
-1. SQL Server インスタンスがインストールされている仮想または物理サーバーに対して__マシン - Azure Arc__ リソースを選択し、 **[拡張機能]** 機能を使用して拡張機能 __Microsoft Monitoring Agent - Azure Arc__ を追加します。 Log Analytics ワークスペースの構成を求められたら、前の手順で保存したワークスペース ID と主キーを使用します。
+1. SQL Server インスタンスがインストールされている仮想または物理サーバーに対して __マシン - Azure Arc__ リソースを選択し、 **[拡張機能]** 機能を使用して拡張機能 __Microsoft Monitoring Agent - Azure Arc__ を追加します。 Log Analytics ワークスペースの構成を求められたら、前の手順で保存したワークスペース ID と主キーを使用します。
 
    ![MMA のインストール](media/configure-advanced-data-security/install-mma-extension.png)
 
@@ -50,17 +50,17 @@ ms.locfileid: "91988028"
 
 1. 詳細については、[Azure Arc を使用した拡張機能の管理](/azure/azure-arc/servers/manage-vm-extensions)に関するページを参照してください
 
-## <a name="enable-advanced-data-security"></a>高度なデータ セキュリティを有効にする
+## <a name="enable-azure-defender"></a>Azure Defender を有効にする
 
-次に、SQL Server インスタンスの高度なデータ セキュリティを有効にする必要があります。
+次に、Azure Defender for SQL Server インスタンスを有効にする必要があります。
 
 1. Security Center に移動して、サイドバーから **[価格と設定]** ページを開きます。
 
 1. 前の手順で MMA 拡張機能用に構成したワークスペースを選択します
 
-1. **[Standard]** を選択します。 **[SQL servers on machines (Preview)]\(マシン上の SQL サーバー (プレビュー)\)** のオプションが有効になっていることを確認します。
+1. **[Azure Defender On]\(Azure Defender を有効化\)** を選択します。 **[SQL servers on machines]\(マシン上の SQL サーバー\)** オプションをオンにします。
 
-   ![ワークスペースのアップグレード](media/configure-advanced-data-security/upgrade-log-analytics-workspace.png)
+   ![ワークスペースのアップグレード](media/configure-advanced-data-security/enable-azure-defender.png)
 
  > [!NOTE]
    > 脆弱性評価を生成する最初のスキャンは、高度なデータ セキュリティを有効にした後 24 時間以内に行われます。 その後、自動スキャンが毎週日曜日に実行されます。

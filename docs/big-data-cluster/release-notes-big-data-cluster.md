@@ -9,12 +9,12 @@ ms.date: 10/19/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: b3265c99e185f4a8fcbe68e400ab1277b1e72671
-ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
+ms.openlocfilehash: f328e136bc0b07f23083153277ac98588702b373
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442882"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489662"
 ---
 # <a name="sql-server-2019-big-data-clusters-release-notes"></a>SQL Server 2019 ビッグ データ クラスターのリリース ノート
 
@@ -191,6 +191,12 @@ SQL Server 2019 一般配布リリース 1 (GDR1) で [!INCLUDE[big-data-cluster
 [!INCLUDE [sql-server-servicing-updates-version-15](../includes/sql-server-servicing-updates-version-15.md)]
 
 ## <a name="known-issues"></a>既知の問題
+
+### <a name="msdtc-capabilities-can-not-be-enabled-for-sql-server-master-instance-running-within-bdc"></a>BDC 内で実行されている SQL Server マスター インスタンスに対して MSDTC 機能を有効にすることはできません
+
+- **影響を受けるリリース**: リリースに関係なく、すべてのビッグ データ クラスターの展開構成。
+
+- **問題およびユーザーへの影響**:SQL Server が SQL Server マスター インスタンスとして BDC 内に展開されている場合、MSDTC 機能を有効にすることはできません。 この問題の回避策はありません。
 
 ### <a name="ha-sql-server-database-encryption-key-encryptor-rotation"></a>HA SQL Server データベースの暗号化キーの暗号化機能のローテーション
 
