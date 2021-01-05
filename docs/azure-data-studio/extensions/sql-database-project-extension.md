@@ -8,13 +8,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: ''
-ms.date: 12/15/2020
-ms.openlocfilehash: 7b52827de249153adc54d148ead5d93a015d152d
-ms.sourcegitcommit: 866554663ca3191748b6e4eb4d8d82fa58c4e426
+ms.date: 10/22/2020
+ms.openlocfilehash: e4030cac39eca0d57af3bf2bcefad293e83971c2
+ms.sourcegitcommit: a2182276ba00c48dc1475b9c7dfa45179d4416dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559094"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94704167"
 ---
 # <a name="sql-database-projects-extension-preview"></a>SQL Database プロジェクトの拡張機能 (プレビュー)
 
@@ -61,31 +61,6 @@ Azure Data Studio での SQL Database Projects 拡張機能の概要について
 - タスク (ビルド、発行) はユーザー定義ではありません。
 - DacFx によって定義されたターゲットを発行します。
 - WSL 環境のサポートは制限されています。
-
-## <a name="workspace"></a>ワークスペース
-Azure Data Studio の SQL データベース プロジェクトは論理ワークスペース内に含まれています。  ワークスペースによって、[エクスプローラー] ウィンドウに表示されるフォルダーと [プロジェクト] ウィンドウに表示されるプロジェクトが管理されます。 ワークスペースでのプロジェクトの追加と削除は、[プロジェクト] ウィンドウの Azure Data Studio インターフェイスから実行できます。 ただし、ワークスペースの設定は、必要であれば `.code-workspace` ファイルで手動編集できます。
-
-下の例の `.code-workspace` ファイルでは、`folders` 配列によって、[エクスプローラー] ウィンドウに含まれるすべてのフォルダーが一覧表示され、`settings` 内の `dataworkspace.projects` 配列によって、[プロジェクト] ウィンドウに含まれるすべての SQL プロジェクトが一覧表示されます。
-
-```json
-{
-    "folders": [
-        {
-            "path": "."
-        },
-        {
-            "name": "WideWorldImportersDW",
-            "path": "..\\WideWorldImportersDW"
-        }
-    ],
-    "settings": {
-        "dataworkspace.projects": [
-            "AdventureWorksLT.sqlproj",
-            "..\\WideWorldImportersDW\\WideWorldImportersDW.sqlproj"
-        ]
-    }
-}
-```
 
 ## <a name="next-steps"></a>次のステップ
 
